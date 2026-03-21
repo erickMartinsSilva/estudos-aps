@@ -1,5 +1,12 @@
 # Atividade: Factory Method e Strategy
 
+## Proposta
+
+Neste exercício, os alunos devem implementar os padrões de projeto
+Factory Method e Strategy para simular um jogo de estratégia, onde
+o jogador pode criar diferentes tipos de unidades e definir quais
+estratégias estas unidades utilizarão em batalha.
+
 ## Alunos
 
 Erick Martins Silva, Gabriel Barretto Galdino dos Santos
