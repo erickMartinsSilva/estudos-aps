@@ -1,5 +1,16 @@
+package templatemethod;
+
 public abstract class Curso {
-	private int prazoConclusaoDias = 30;
+	protected int prazoConclusaoDias;
+	protected double valorDia;
+
+	public int getPrazoConclusaoDias() {
+    return prazoConclusaoDias;
+	}
+
+	public double getValorDia() {
+		return valorDia;
+	}
 	
 	public Curso(int prazoConclusaoDias, double valorDia) {
 		this.prazoConclusaoDias = prazoConclusaoDias;
@@ -20,21 +31,23 @@ public abstract class Curso {
 		System.out.println("Prazo de conclusão: " + this.prazoConclusaoDias + " dias");
 	}
 	
-	private void aplicarAtividades() {
-		System.out.println("Aplicando atividades");
+	protected void aplicarAtividades() {
+		System.out.println("Aplicando atividades");//virou protected
 	};
 	
-	private void aplicarAtividadesAvancadas() {};
+	protected void aplicarAtividadesAvancadas() {};//virou protected
 	
-	private void aplicarAvaliacoes() {
+	protected void aplicarAvaliacoes() {//virou protected
 		System.out.println("Aplicando avaliações");
 	};
 	
-	private void aplicarAvaliacoesAvancadas() {};
+	protected void aplicarAvaliacoesAvancadas() {};//virou protected
 	
-	private void emitirCertificado() {
+	protected void emitirCertificado() {//virou protected 
 		System.out.println("Certificado emitido");
 	}
 	
-	private void calcularValorTotal() {}
+	public double calcularValorTotal() {
+		return prazoConclusaoDias * valorDia; //adicionei essa função aqui p calcular o valor padrao
+	}
 }
