@@ -1,12 +1,10 @@
 package cliente;
 
-import  decorator.*;
-import  templatemethod.*;    
+import decorator.*;
+import templatemethod.*;    
 
 public class Cliente {
-
     public static void main(String[] args) {
-
         System.out.println("=== SISTEMA DE CURSOS ONLINE ===\n");
 
         // ================================

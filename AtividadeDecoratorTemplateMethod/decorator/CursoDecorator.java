@@ -2,7 +2,6 @@ package decorator;
 import templatemethod.*; 
 
 public abstract class CursoDecorator extends Curso {
-
     protected Curso aux;
 
     public CursoDecorator(Curso curso) {
@@ -10,10 +9,7 @@ public abstract class CursoDecorator extends Curso {
         this.aux = curso;
     }
 
-    public void templateMethod() {
-        aux.templateMethod(); 
-    }
-
+    @Override
     public double calcularValorTotal() {
         return aux.calcularValorTotal(); 
     }

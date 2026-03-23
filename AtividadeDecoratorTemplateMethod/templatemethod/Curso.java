@@ -5,7 +5,7 @@ public abstract class Curso {
 	protected double valorDia;
 
 	public int getPrazoConclusaoDias() {
-    return prazoConclusaoDias;
+		return prazoConclusaoDias;
 	}
 
 	public double getValorDia() {
@@ -32,22 +32,22 @@ public abstract class Curso {
 	}
 	
 	protected void aplicarAtividades() {
-		System.out.println("Aplicando atividades");//virou protected
-	};
+		System.out.println("Aplicando atividades");
+	}
 	
-	protected void aplicarAtividadesAvancadas() {};//virou protected
+	protected void aplicarAtividadesAvancadas() {};
 	
-	protected void aplicarAvaliacoes() {//virou protected
+	protected void aplicarAvaliacoes() {
 		System.out.println("Aplicando avaliações");
-	};
+	}
 	
-	protected void aplicarAvaliacoesAvancadas() {};//virou protected
+	protected void aplicarAvaliacoesAvancadas() {};
 	
-	protected void emitirCertificado() {//virou protected 
+	protected void emitirCertificado() {
 		System.out.println("Certificado emitido");
 	}
 	
 	public double calcularValorTotal() {
-		return prazoConclusaoDias * valorDia; //adicionei essa função aqui p calcular o valor padrao
+		return prazoConclusaoDias * valorDia;
 	}
 }

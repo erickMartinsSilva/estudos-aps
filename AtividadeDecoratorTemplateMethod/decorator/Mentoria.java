@@ -2,17 +2,15 @@ package decorator;
 import templatemethod.*; 
 
 public class Mentoria extends CursoDecorator{
-
+	protected double valor = 56;
+	
     public Mentoria(Curso curso){
         super(curso);
+        System.out.println("Mentoria individual incluída no pacote de estudos");
     }
 
-    public void templateMethod(){
-        super.templateMethod(); //aq tava fiquei com medo de dar erro ai coloquei o super p nn quebrar o padrao do templateMethod
-        System.out.println("Mentoria individual incluída no pacote de estudos");
-    }   
-
+    @Override
     public double calcularValorTotal(){
-        return super.calcularValorTotal() + 56;
+        return super.calcularValorTotal() + this.valor;
     }
 }
