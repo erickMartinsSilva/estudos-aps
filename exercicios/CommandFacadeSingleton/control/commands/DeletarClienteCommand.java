@@ -1,6 +1,6 @@
-package Command.control;
+package control;
 
-import Command.model.Cliente;
+import CommandFacadeSingleton.model.Cliente;
 
 public class DeletarClienteCommand extends ClienteCommand {
     public Cliente backup;

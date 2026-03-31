@@ -1,4 +1,4 @@
-package Command.model;
+package model;
 
 public class ModificarClienteInput extends Cliente {
     public int id_novo;

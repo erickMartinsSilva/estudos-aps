@@ -1,6 +1,6 @@
-package Command.control;
+package control;
 
-import Command.model.Cliente;
+import CommandFacadeSingleton.model.Cliente;
 
 public class IncluirClienteCommand extends ClienteCommand {
     public void execute(Cliente c) {

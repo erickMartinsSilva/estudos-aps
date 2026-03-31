@@ -1,7 +1,7 @@
-package Command.control;
+package control;
 
-import Command.model.Cliente;
-import Command.model.ModificarClienteInput;
+import CommandFacadeSingleton.model.Cliente;
+import CommandFacadeSingleton.model.ModificarClienteInput;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,23 +28,8 @@ public class ClienteInvoker {
         return instance;
     }
 
-    public void runCommand(String command, int id, int newId, String nome) {
-        try {
-            ClienteCommand c = comandos.get(command);
-            Cliente cliente;
-
-            // Modificar Cliente requires both the current id and the new id
-            if(c instanceof ModificarClienteCommand) {
-                cliente = new ModificarClienteInput(id, newId, nome);
-            } else {
-                cliente = new Cliente(id, nome);
-            }
-
-            c.execute(cliente);
-            historico.add(c);
-        } catch (NullPointerException e) {
-            System.err.println("ERRO: Comando incorreto (" + command + ")");
-        }
+    public void executeCommand(ClienteCommand command, Cliente c) {
+        command.execute(c);
     }
 
     public void undoCommand() {

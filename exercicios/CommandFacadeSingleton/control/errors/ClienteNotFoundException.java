@@ -1,4 +1,4 @@
-package Command.errors;
+package errors;
 
 public class ClienteNotFoundException extends Exception {
     public ClienteNotFoundException(int id) {

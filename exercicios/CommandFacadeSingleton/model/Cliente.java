@@ -1,4 +1,4 @@
-package Command.model;
+package model;
 
 public class Cliente {
     private int id;

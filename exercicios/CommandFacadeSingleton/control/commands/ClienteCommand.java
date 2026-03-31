@@ -1,7 +1,7 @@
-package Command.control;
+package control;
 
-import Command.model.Cliente;
-import Command.model.ClienteRepository;
+import CommandFacadeSingleton.model.Cliente;
+import CommandFacadeSingleton.model.ClienteRepository;
 
 public abstract class ClienteCommand {
     public ClienteRepository instance = ClienteRepository.getInstance();

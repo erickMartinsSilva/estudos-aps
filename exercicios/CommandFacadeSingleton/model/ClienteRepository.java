@@ -1,6 +1,6 @@
-package Command.model;
+package CommandFacadeSingleton.model;
 
-import Command.errors.ClienteNotFoundException;
+import CommandFacadeSingleton.errors.ClienteNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,10 +28,11 @@ public class ClienteRepository {
     public void addCliente(Cliente c) {
         clienteList.add(c);
     }
+
     public void modifyCliente(Cliente c) {
         try {
-            if(c instanceof Command.model.ModificarClienteInput) {
-                Command.model.ModificarClienteInput input = (Command.model.ModificarClienteInput) c;
+            if(c instanceof ModificarClienteInput) {
+                ModificarClienteInput input = (ModificarClienteInput) c;
                 Cliente oldRef = this.getCliente(input.getId());
                 if(oldRef == null) {
                     return;
@@ -50,6 +51,7 @@ public class ClienteRepository {
             System.err.println(e.getMessage());
         }
     }
+
     public void deleteCliente(Cliente c) {
         try {
             int index = this.find(c);
@@ -58,24 +60,26 @@ public class ClienteRepository {
             System.err.println(e.getMessage());
         }
     }
+
     public void deleteLastCliente() {
         if(clienteList.isEmpty()) {
             System.out.println("Lista de clientes vazia!");
         } else {
-            clienteList.removeLast();
+            clienteList.remove(clienteList.size()-1);
         }
     }
+
     public Cliente getCliente(int id) {
         try {
             Cliente aux = new Cliente(id, "");
             int index = this.find(aux);
-
             return clienteList.get(index);
         } catch (ClienteNotFoundException e) {
             System.err.println(e.getMessage());
             return null;
         }
     }
+
     public String getClientes() {
         if(clienteList.isEmpty()) {
             System.out.println("Lista de clientes vazia!");

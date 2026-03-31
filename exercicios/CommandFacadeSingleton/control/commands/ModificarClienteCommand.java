@@ -1,7 +1,7 @@
-package Command.control;
+package control;
 
-import Command.model.Cliente;
-import Command.model.ModificarClienteInput;
+import CommandFacadeSingleton.model.Cliente;
+import CommandFacadeSingleton.model.ModificarClienteInput;
 
 public class ModificarClienteCommand extends ClienteCommand {
     public Cliente backup;
